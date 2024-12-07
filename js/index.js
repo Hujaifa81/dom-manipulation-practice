@@ -58,9 +58,12 @@ function donateNow(e) {
     const splittedText = historyText.split(' ')
     const slicedText = splittedText.slice(1, splittedText.length)
     const joinedText = slicedText.join(' ');
-    document.getElementById('history-section').innerHTML += `<div class='border border-white-[#FFFFFF] rounded-xl p-7 mt-3'>
+    const createElement=document.createElement('div')
+    createElement.innerHTML = `<div class='border border-white-[#FFFFFF] rounded-xl p-7 mt-3'>
 <p class='font-semibold text-xl'>${numberValue} Taka is donated ${joinedText}</p>
 <p class='text-[#111111B3] text-base mt-3'>Date:${dateTime}<p></div>
 `
+const container=document.getElementById('history-section')
+container.insertBefore(createElement,container.firstChild)
     my_modal_5.showModal()
 }
